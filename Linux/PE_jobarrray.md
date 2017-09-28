@@ -27,8 +27,7 @@ You should do the bowtie2-build step beforehand interactively or in a submitted 
 
 The job array is going to align the PE reads from 15 samples to the PA14 genome. 
 Here are the names of the 15 samples:
-
-12C_598_1
+12C_598_1  
 12C_598_2
 12C_598_3
 12C_598_4
