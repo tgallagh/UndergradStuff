@@ -48,6 +48,7 @@ We only want the 598 phage files.
 
 ```
 # this is a kinda awful way to make the file, but it works
+# cd into the directory in an I/O node 
 for i in *598_[0-9].read1_paired.fastq; \
 do echo $i >> filenames.txt ; done
 
