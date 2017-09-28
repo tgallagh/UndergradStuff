@@ -26,18 +26,18 @@ Bowtie2 requires an index of the reference genome to do alignments.
 You should do the bowtie2-build step beforehand interactively or in a submitted job (otherwise, this step will be repeated in all tasks in the job array)
 
 The job array is going to align the PE reads from 15 samples to the PA14 genome. 
-Here are the names of the 15 samples:
+Here are the names of the 15 samples:  
 12C_598_1  
-12C_598_2
-12C_598_3
-12C_598_4
-12P_598_1
-12P_598_2
-12P_598_3
-12P_598_4
-9C_598_2
-9C_598_3
-9C_598_4
+12C_598_2  
+12C_598_3  
+12C_598_4  
+12P_598_1  
+12P_598_2  
+12P_598_3  
+12P_598_4  
+9C_598_2  
+9C_598_3  
+9C_598_4  
 9P_598_1
 9P_598_2
 9P_598_3
