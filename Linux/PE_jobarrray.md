@@ -38,10 +38,10 @@ Here are the names of the 15 samples:
 9C_598_2  
 9C_598_3  
 9C_598_4  
-9P_598_1
-9P_598_2
-9P_598_3
-9P_598_4
+9P_598_1  
+9P_598_2  
+9P_598_3  
+9P_598_4  
 
 How do we make a filename.txt file with just the prefixes? The directory with the READ1 and READ2 files also has other PE fastq files (592 phage files) we don't want to include in this job array.
 We only want the 598 phage files. 
@@ -78,12 +78,8 @@ module load bowtie2/2.2.7
 # filenames.txt contains list of filename prefixes 
 input=$(head -n $SGE_TASK_ID filenames.txt | tail -n 1)
 
-# build reference genome index 
 REF=/path/to/directory/with/index/
 DEST=/path/to/desired/output/directory/
-
-# should build a reference index beforehand:
-# bowtie2-build pa14_rga_withn.fasta $REF/pa14
 
 bowtie2 -x $REF \
  -1 $input\.read1_paired.fastq -2 $input\.read2_paired.fastq \ 
