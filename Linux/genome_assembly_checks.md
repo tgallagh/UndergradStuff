@@ -22,21 +22,44 @@
 	* most aligners don't automatically generate this stat
 
 ### getting coverage with Samtools and bedtools
-* First have to align the quality filtered reads to the assembly
+# First have to align the quality filtered reads to the assembly
 * for ex using [bowtie2]:
 
 [bowtie2]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 Have to first index your reference genome (your assemblies) <br />
+```
+module load bowtie2/2.2.7
+bowtie2-build <INPUT GENOME ASSEMBLY> <ENTER REF PREFIX>
+
+```
 Then can do a quick alignment of QF reads to the indexed genome <br />
-```bowtie2 --very-fast -x  <INPUT PATH TO YOUR INDEXED GENOME> \n
+
+```
+bowtie2 --very-fast -x  <INPUT PATH TO YOUR REF PREFIX> \n
 	-1 <INPUT PATH TO QF READ1>
 	-2 <INPUT PATH TO QF READ2>
-	-S <DEST PATH OF SAM FILE>`
+	-S <DEST PATH OF SAM FILE>
 ```
- 
+bowtie2 will give an output SAM file, which lists the location of read mappings to your genome and some other alignment STATS <br />
+
+# then can use [samtools] to convert SAM to BAM (binary version) and sort
+```
+module load samtools
+samtools view -bS <PATH TO SAM FILE> | samtools sort > <DEST OF SORTED BAM FILE>
+```
+[samtools]: http://samtools.sourceforge.net/
+
+# [bedtools] can calculate a histogram of genome coverage
+```
+module load bedtools
+bedtools genomecov -i <BAM FILE> -g <GENOME FILE>
+```
+
+### putting parameters in one file 
 
 ### Cut-offs for contigs
 * No right answer
 * For a single isolate genome assembly, min of 5x or 10x coverage and contig length > 1000-2000 bp
+in progress...
 
 
