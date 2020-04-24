@@ -12,7 +12,6 @@
 	* for ex, can look at the last couple of lines of megahit log
 		> STAT] 138 contigs, total 6554082 bp, min 222 bp, max 687872 bp, avg 47493 bp, N50 292911 bp
 * Note, spades does not give assembly stats and recommends QUAST to assess assembly quality
-
 * Another useful parameter is coverage:
 	* Number of unique reads that align to a given nucleotide in the contig or genome
 	* We can calculate the average coverage across a contig: 
@@ -24,9 +23,9 @@
 
 ### getting coverage with Samtools
 * First have to align the quality filtered reads to the assembly
-* using [bowtie2] [1]
+* using [bowtie2]
 
-[1]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+[bowtie2]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 
 
 ### Cut-offs for contigs
