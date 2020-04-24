@@ -26,7 +26,14 @@
 * using [bowtie2]
 
 [bowtie2]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+Have to first index your reference genome (your assemblies)
+Then can do a quick alignment of QF reads to the indexed genome
+`bowtie2 --very-fast -x  <INPUT PATH TO YOUR INDEXED GENOME> \n
+	-1 <INPUT PATH TO QF READ1>
+	-2 <INPUT PATH TO QF READ2>
+	-S <DEST PATH OF SAM FILE>`
 
+ 
 
 ### Cut-offs for contigs
 * No right answer
