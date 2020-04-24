@@ -1,7 +1,8 @@
 # Checking genome assembly
 
 ### common assembly parameters
-* N50=length of contig that is 50% of total genome length
+* N50 is the length of the smallest contig in the set that contains the fewest (largest) contigs whose combined length represents at least 50% of the assembly
+* L50 is the number of contigs whose summed length is N50
 * Number of contigs
 * Total number of bases
 * Shortest contig
@@ -12,6 +13,7 @@
 	* for ex, can look at the last couple of lines of megahit log
 		> STAT] 138 contigs, total 6554082 bp, min 222 bp, max 687872 bp, avg 47493 bp, N50 292911 bp
 * Note, spades does not give assembly stats and recommends QUAST to assess assembly quality
+
 * Another useful parameter is coverage:
 	* Number of unique reads that align to a given nucleotide in the contig or genome
 	* We can calculate the average coverage across a contig: 
