@@ -24,7 +24,7 @@
 
 ### getting coverage with Samtools
 * First have to align the quality filtered reads to the assembly
-* using [bowtie2] (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml):
+* using [bowtie2] [1]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 
 
 ### Cut-offs for contigs
