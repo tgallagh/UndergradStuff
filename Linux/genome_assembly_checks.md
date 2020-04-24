@@ -36,8 +36,8 @@ Then can do a quick alignment of QF reads to the indexed genome <br />
 
 ```
 bowtie2 --very-fast -x  <INPUT PATH TO YOUR REF PREFIX> \n
-	-1 <INPUT PATH TO QF READ1>
-	-2 <INPUT PATH TO QF READ2>
+	-1 <INPUT PATH TO QF READ1> \n
+	-2 <INPUT PATH TO QF READ2> \n
 	-S <DEST PATH OF SAM FILE>
 ```
 bowtie2 will give an output SAM file, which lists the location of read mappings to your genome and some other alignment STATS <br />
@@ -60,6 +60,7 @@ cat <INPUT ASSEMBLY FILE>  | grep "^>" | sed 's/flag.*len=//' | sed 's/>//' | se
 module load bedtools
 bedtools genomecov -i <BAM FILE> -g <GENOME FILE> > <DEST PATH OF .TXT>
 ```
+[bedtools]:https://bedtools.readthedocs.io/en/latest/content/tools/genomecov.html
 
 * can also pipe samtools output into bedtools
 * for ex:
