@@ -50,9 +50,22 @@ samtools view -bS <PATH TO SAM FILE> | samtools sort > <DEST OF SORTED BAM FILE>
 [samtools]: http://samtools.sourceforge.net/
 
 # [bedtools] can calculate a histogram of genome coverage
+* to use bedtools genomecov, must first generate a .genome file
+* can use bash functions to do this
+```
+cat <INPUT ASSEMBLY FILE>  | grep "^>" | sed 's/flag.*len=//' | sed 's/>//' | sed 's/ /\t/g' > <SAMPLE NAME>.genome 
+```
+
 ```
 module load bedtools
-bedtools genomecov -i <BAM FILE> -g <GENOME FILE>
+bedtools genomecov -i <BAM FILE> -g <GENOME FILE> > <DEST PATH OF .TXT>
+```
+
+* can also pipe samtools output into bedtools
+* for ex:
+```
+cd /dfs5/bio/tgallagh/Wound_Sputum_RawSeq/data/processed/megahit
+for i in $(ls); do echo $i & samtools view -b $i/bowtie2/$i.bam | genomeCoverageBed -ibam stdin -g $i/cdhit/$i.genome > $i/cdhit/$i\_bedcoverage.txt ; done
 ```
 
 ### putting parameters in one file 
